@@ -2,7 +2,7 @@ const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("bookstore.db");
 const express = require('express');
 const app = express();
-
+const port = 3000;
 const cors = require('cors');
 app.use(cors());
 
@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.get("/book/:title", async (req, res) => {
-  const q = `SELECT * FROM books WHERE title LIKE '%Rings%'`;
+  const q = `SELECT * FROM books WHERE title LIKE '%${req.params.title}%'`;
 
   try {
     const results = await query(q);
@@ -24,7 +24,7 @@ app.get("/book/:title", async (req, res) => {
   }
 });
 
-app.listen(3000);
+
 
 function query(q) {
   return new Promise(function(resolve, reject) {
@@ -37,3 +37,6 @@ function query(q) {
     });
   });
 }
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
+});
