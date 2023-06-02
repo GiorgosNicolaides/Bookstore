@@ -18,12 +18,11 @@
 - Run the downloaded installer (.msi file).
 - Follow the installation wizard prompts, selecting the desired options.
 - After the installation is complete, open a command prompt or PowerShell window.
-- Verify the installation by running the following commands:
 
+#### Verify the installation by running the following commands:
     node --version
     npm --version
 
- 
 
 # Required installations
 
