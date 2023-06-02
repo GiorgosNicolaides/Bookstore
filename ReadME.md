@@ -20,10 +20,10 @@
 - After the installation is complete, open a command prompt or PowerShell window.
 - Verify the installation by running the following commands:
 
-      ---
+    node --version
+    npm --version
 
-  node --version
-  npm --version
+ 
 
 # Required installations
 
