@@ -14,11 +14,11 @@ app.use(express.static('public'));
 app.get("/book/:title", async (req, res) => {
   const title = req.params.title;
   const title1 = title.substring(1); // Removes the first character
-  const q = `SELECT * FROM books WHERE title Like'%${title1}%'`;
-  
+  const q = 'SELECT * FROM books WHERE title LIKE ?';
+  const params = [`%${title1}%`];
 
   try {
-    const results = await query(q);
+    const results = await query(q, params);
     res.json(results);
   } catch (err) {
     console.error(err);
@@ -28,15 +28,26 @@ app.get("/book/:title", async (req, res) => {
 });
 
 
-app.post('/book/',(req,res)=>{
-	console.log(req.body);
-	res.json(req.body);
+app.post('/book/', async (req, res) => {
+  const { author, title, genre, price } = req.body;
+
+  const q = `INSERT INTO books (author, title, genre, price) VALUES (?, ?, ?, ?)`;
+  const params = [author, title, genre, price];
+
+  try {
+    await query(q, params);
+    res.json({ message: 'Book added successfully' });
+  } catch (err) {
+    console.error(err);
+    res.append('status', '500');
+    res.send(err);
+  }
 });
 
 
-function query(q) {
+function query(q, params = []) {
   return new Promise(function(resolve, reject) {
-    db.all(q, (err, rows) => {
+    db.all(q, params, (err, rows) => {
       if (err) {
         reject(err);
         return;
@@ -47,4 +58,4 @@ function query(q) {
 }
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
-});
+});  
