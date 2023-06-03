@@ -43,3 +43,24 @@
     npm install body-parser
 
 ###### Make sure you have Node.js and npm installed on your system before running these commands.
+
+
+## To run the server 
+    node server.js
+
+
+#### The page can be found in `http://localhost:3000/?
+
+
+
+
+
+
+Resources:
+-   https://github.com/tserpes/restfulapi
+-   https://youtube.com/live/IkSXm6D_VpM?feature=share
+-   https://youtube.com/live/sa0o3mZlohk?feature=share
+-   https://www.udemy.com/course/the-web-developer-bootcamp/
+-   https://www.geeksforgeeks.org/
+-   https://developer.mozilla.org/en-US/docs/Web
+-   https://chat.openai.com/
