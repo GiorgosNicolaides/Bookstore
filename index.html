@@ -7,6 +7,33 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form id="register">
+        <div>
+          <label for="author">Author:</label>
+          <input type="text" id="author" required />
+        </div>
+        <div>
+          <label for="title">Title:</label>
+          <input type="text" id="title" required />
+        </div>
+        <div>
+          <label for="genre">Genre:</label>
+          <select id="genre" required>
+            <option value="">Select genre</option>
+            <option value="Science fiction">Science fiction</option>
+            <option value="Satire">Satire</option>
+            <option value="Drama">Drama</option>
+            <option value="Action and Adventure">Action and Adventure</option>
+            <option value="Romance">Romance</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Horror">Horror</option>
+          </select>
+        </div>
+        <div>
+          <label for="price">Price:</label>
+          <input type="number" id="price" step="0.01" required />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
 </body>
 </html>
