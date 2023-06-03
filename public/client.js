@@ -1,44 +1,74 @@
-class Book {
-  constructor(author, title, genre, price) {
-    this.author = author;
-    this.title = title;
-    this.genre = genre;
-    this.price = price;
-  }
+const slides = document.querySelectorAll(".slide");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+let currentSlide = 0;
+
+function showSlide() {
+  slides.forEach((slide, index) => {
+    if (index === currentSlide) {
+      slide.style.display = "block";
+    } else {
+      slide.style.display = "none";
+    }
+  });
 }
 
+prevBtn.addEventListener("click", () => {
+  currentSlide--;
+  if (currentSlide < 0) {
+    currentSlide = slides.length - 1;
+  }
+  showSlide();
+});
+
+nextBtn.addEventListener("click", () => {
+  currentSlide++;
+  if (currentSlide >= slides.length) {
+    currentSlide = 0;
+  }
+  showSlide();
+});
+
+showSlide();
 document
-  .getElementById("register-form")
-  .addEventListener("submit", async function (e) {
-    e.preventDefault();
-    const author = document.getElementById("author").value;
-    const title = document.getElementById("title").value;
-    const genre = document.getElementById("genre").value;
-    const price = parseFloat(document.getElementById("price").value);
+    .getElementById("register-form")
+    .addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const author = document.getElementById("author").value;
+        const title = document.getElementById("title").value;
+        const genre = document.getElementById("genre").value;
+        const price = parseFloat(document.getElementById("price").value);
 
-    // Validate the price input
-    if (isNaN(price)) {
-      alert("Please enter a valid price.");
-      return;
-    }
+        // Validate the price input
+        if (isNaN(price)) {
+            alert("Please enter a valid price.");
+            return;
+        }
 
-    const book = { author, title, genre, price };
-    const url = "http://localhost:3000/book/";
-    const result = await fetch(url, {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(book),
+        const book = { author, title, genre, price };
+        const url = "http://localhost:3000/book/";
+        const result = await fetch(url, {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(book),
+        });
+
+        const response = await result.json();
+        if (response.message === "Book added successfully") {
+            alert("Book added successfully");
+        } else {
+            alert("Failed to add book");
+        }
+
+        // Clear the form
+        document.getElementById("author").value = "";
+        document.getElementById("title").value = "";
+        document.getElementById("genre").value = "";
+        document.getElementById("price").value = "";
     });
-    console.log(await result.json());
-    // Clear the form
-    document.getElementById("author").value = "";
-    document.getElementById("title").value = "";
-    document.getElementById("genre").value = "";
-    document.getElementById("price").value = "";
-  });
 
 document
   .getElementById("search-form")
@@ -62,20 +92,20 @@ document
     const resultsDiv = document.createElement("div");
     resultsDiv.id = "search-results";
 
-    // Iterate through the books and display the information
-    books.forEach((book) => {
-      const bookInfo = document.createElement("p");
-      bookInfo.textContent = `Title: ${book.title}, Author: ${book.author}, Genre: ${book.genre}, Price: ${book.price}`;
-      resultsDiv.appendChild(bookInfo);
-    });
+    if (books.length === 0) {
+      const noResultsInfo = document.createElement("p");
+      noResultsInfo.textContent = "Book does not exist";
+      resultsDiv.appendChild(noResultsInfo);
+    } else {
+      // Iterate through the books and display the information
+      books.forEach((book) => {
+        const bookInfo = document.createElement("p");
+        bookInfo.textContent = `Title: ${book.title}, Author: ${book.author}, Genre: ${book.genre}, Price: ${book.price}`;
+        resultsDiv.appendChild(bookInfo);
+      });
+    }
 
     // Append the results div below the second form
     const scrollContainer = document.getElementById("scroll-container");
     scrollContainer.appendChild(resultsDiv);
   });
-
-// Clear results when the clear button is clicked
-document.getElementById("clear-results").addEventListener("click", function () {
-  const resultsContainer = document.getElementById("scroll-container");
-  resultsContainer.innerHTML = ""; // Clear the results container
-});

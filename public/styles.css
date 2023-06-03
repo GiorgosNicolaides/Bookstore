@@ -5,11 +5,10 @@ body {
 
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 100vh;
 }
-
 .section {
   background-color: #ffffff;
   border-radius: 10px;
@@ -21,10 +20,7 @@ body {
   margin: 10px;
 }
 
-.section:hover {
-  transform: scale(1.1);
-  z-index: 1;
-}
+
 
 h2 {
   color: #333333;
@@ -32,7 +28,7 @@ h2 {
 
 .scrollable {
   overflow-y: auto;
-  max-height: 300px; /* Adjust the max height as needed */
+  max-height: 300px;
 }
 
 #search-results {
@@ -42,9 +38,11 @@ h2 {
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+  overflow-y: auto; /* Make search results scrollable */
+  max-height: 300px; /* Set the maximum height for scrollable results */
 }
 
-/* Additional styling to improve the overall look */
+
 button {
   background-color: #4caf50;
   color: #ffffff;
@@ -67,4 +65,34 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+.slideshow {
+  display: flex;
+  overflow-x: hidden;
+  justify-content: center;
+  margin-top: 20px;
+}
+.slide {
+  flex: 0 0 100%;
+  display: none;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.prev-btn,
+.next-btn {
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: #45a049;
 }
