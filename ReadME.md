@@ -50,7 +50,7 @@
     sqlite3 bookstore.db
  
 ## Run the scripts 
-While you are in the sqlite shell
+#### While you are in the sqlite shell
     .read create.sql
 
 ## To run the server 
