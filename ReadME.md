@@ -20,9 +20,9 @@
 - After the installation is complete, open a command prompt or PowerShell window.
 
 #### Verify the installation by running the following commands:
+
     node --version
     npm --version
-
 
 # Required installations
 
@@ -44,22 +44,20 @@
 
 ###### Make sure you have Node.js and npm installed on your system before running these commands.
 
-# Run 
+# Run
 
 ## Creater .db file and run
+
     sqlite3 bookstore.db
- 
-## Run the scripts 
+
+## Run the scripts
+
 #### While you are in the sqlite shell
+
     .read create.sql
 
-## To run the server 
+## To run the server
+
     node server.js
 
-
 #### The page can be found in `http://localhost:3000/?
-
-
-
-
-
