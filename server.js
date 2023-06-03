@@ -15,8 +15,7 @@ app.get("/book/:title", async (req, res) => {
   const title = req.params.title;
   const title1 = title.substring(1); // Removes the first character
   const q = `SELECT * FROM books WHERE title Like'%${title1}%'`;
-  console.log(q);
-
+  
 
   try {
     const results = await query(q);
