@@ -63,12 +63,3 @@
 
 
 
-
-Resources:
--   https://github.com/tserpes/restfulapi
--   https://youtube.com/live/IkSXm6D_VpM?feature=share
--   https://youtube.com/live/sa0o3mZlohk?feature=share
--   https://www.udemy.com/course/the-web-developer-bootcamp/
--   https://www.geeksforgeeks.org/
--   https://developer.mozilla.org/en-US/docs/Web
--   https://chat.openai.com/
