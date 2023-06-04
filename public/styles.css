@@ -1,36 +1,19 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  background-image: url("https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg");
-  background-size: cover;
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  background-image: url('https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg');
   background-repeat: no-repeat;
-  background-position: center;
-  animation: backgroundAnimation 20s infinite linear;
+  background-size: cover;
+  animation: backgroundAnimation 20s linear infinite;
 }
 
 @keyframes backgroundAnimation {
-  0% { background-position: 0 0; }
-  100% { background-position: 100% 100%; }
-}
-
-
-body {
-  background-color: #e7d1bd;
-  font-family: Arial, sans-serif;
-}
-
-form {
-  background-color: rgba(232, 216, 201, 0.5); /* Set the background color with opacity */
-  padding: 20px;
-  border-radius: 10px;
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
 }
 
 .container {
@@ -39,8 +22,9 @@ form {
   align-items: center;
   height: 100vh;
 }
+
 .section {
-  background-color: rgba(232,216,201,255); 
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -60,16 +44,15 @@ h2 {
 }
 
 #search-results {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   margin-top: 20px;
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  overflow-y: auto; /* Make search results scrollable */
-  max-height: 300px; /* Set the maximum height for scrollable results */
+  overflow-y: auto;
+  max-height: 300px;
 }
-
 
 button {
   background-color: #4caf50;
@@ -93,13 +76,17 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333333;
 }
+
 .slideshow {
   display: flex;
   overflow-x: hidden;
   justify-content: center;
   margin-top: 20px;
 }
+
 .slide {
   flex: 0 0 100%;
   display: none;
@@ -113,14 +100,15 @@ select {
 
 .prev-btn,
 .next-btn {
-    background-color: #4caf50;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
+  background-color: #654321;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
 }
+
 .prev-btn:hover,
 .next-btn:hover {
-  background-color: #45a049;
+  background-color: #8b4513;
 }
