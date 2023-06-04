@@ -1,5 +1,29 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: backgroundAnimation 20s infinite linear;
+}
+
+@keyframes backgroundAnimation {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+
 body {
-  background-color: #f2f2f2;
+  background-color: #ffffff;
   font-family: Arial, sans-serif;
 }
 
@@ -10,7 +34,7 @@ body {
   height: 100vh;
 }
 .section {
-  background-color: #ffffff;
+  background-color: #F5F5DC; 
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -19,8 +43,6 @@ body {
   text-align: center;
   margin: 10px;
 }
-
-
 
 h2 {
   color: #333333;
