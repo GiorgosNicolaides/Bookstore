@@ -23,8 +23,14 @@ html, body {
 
 
 body {
-  background-color: #ffffff;
+  background-color: #e7d1bd;
   font-family: Arial, sans-serif;
+}
+
+form {
+  background-color: rgba(232, 216, 201, 0.5); /* Set the background color with opacity */
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .container {
@@ -34,7 +40,7 @@ body {
   height: 100vh;
 }
 .section {
-  background-color: #F5F5DC; 
+  background-color: rgba(232,216,201,255); 
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
