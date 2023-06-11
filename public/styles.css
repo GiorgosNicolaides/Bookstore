@@ -90,6 +90,7 @@ select {
   overflow-x: hidden;
   justify-content: center;
   margin-top: 20px;
+  position: relative; /* Added relative positioning */
 }
 
 .slide {
@@ -117,12 +118,15 @@ select {
   border-radius: 4px;
   cursor: pointer;
   margin: 0 5px;
+  transition: transform 0.3s; /* Added transition for smooth movement */
 }
 
 .prev-btn:hover,
 .next-btn:hover {
   background-color: #8b4513;
 }
+
+
 
 /* Media Queries */
 
