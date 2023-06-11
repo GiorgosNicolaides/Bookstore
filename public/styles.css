@@ -20,7 +20,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .section {
@@ -32,6 +34,9 @@ body {
   width: 400px;
   text-align: center;
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 h2 {
@@ -88,14 +93,19 @@ select {
 }
 
 .slide {
-  flex: 0 0 100%;
+  flex: 0 0 400px;
   display: none;
+  width: 100%;
 }
 
 .controls {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
 }
 
 .prev-btn,
@@ -106,9 +116,38 @@ select {
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
+  margin: 0 5px;
 }
 
 .prev-btn:hover,
 .next-btn:hover {
   background-color: #8b4513;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .section {
+    width: 100%;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .prev-btn,
+  .next-btn {
+    margin: 5px 0;
+  }
 }
