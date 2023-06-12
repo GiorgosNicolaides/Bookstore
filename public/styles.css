@@ -98,15 +98,14 @@ select {
   display: none;
   width: 100%;
 }
-
 .controls {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  position: absolute;
+  align-items: flex-end;
+  margin-top: auto;
+  position: sticky;
   bottom: 20px;
-  left: 0;
-  right: 0;
+  z-index: 1;
 }
 
 .prev-btn,
@@ -118,8 +117,12 @@ select {
   border-radius: 4px;
   cursor: pointer;
   margin: 0 5px;
-  transition: transform 0.3s; /* Added transition for smooth movement */
+  transition: transform 0.3s;
+  position: relative; /* Add relative positioning */
+  z-index: 1; /* Ensure buttons stay above the slideshow */
 }
+
+
 
 .prev-btn:hover,
 .next-btn:hover {
