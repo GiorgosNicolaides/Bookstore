@@ -113,15 +113,9 @@ Output: A JSON message indicating whether the operation was successful or not.
 
 # Run
 
-## Creater .db file and run
-
-    sqlite3 bookstore.db
 
 ## Run the scripts
 
-#### While you are in the sqlite shell
-
-    .read create.sql
 
 ## To run the server
 
